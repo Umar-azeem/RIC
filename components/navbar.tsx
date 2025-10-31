@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import { ChevronDown, Search, Menu, X } from "lucide-react"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,13 +14,20 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-[#2E5090] text-white sticky top-0 z-50 shadow-lg">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <nav className="bg-[#2E5090] text-white sticky top-0 z-50 shadow-lg " >
+      <div className="max-w-7xl mx-auto px-4 ">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-[#2E5090]">RIC</div>
-            <span>RIC</span>
+          <Link href="/" className="flex items-center gap-2 font-bold text-xl ">
+            <div className="w-20 h-20 md:w-28 md:h-20 lg:w-36 lg:h-36 rounded-full flex items-center justify-center ">
+           <Image
+              src="/img/logo.png"  
+              alt="Example image"        
+              width={500}                
+              height={300}         
+    />
+            </div>
+       
           </Link>
 
           {/* Desktop Menu */}

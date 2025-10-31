@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin } from "lucide-react"
+import Link from "next/link";
+import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -12,8 +12,8 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">About RIC</h3>
             <p className="text-gray-200 text-sm">
-              Riphah International College prepares students with transformative experience and to be well-rounded
-              leaders.
+              Riphah International College prepares students with transformative
+              experience and to be well-rounded leaders.
             </p>
           </div>
 
@@ -27,17 +27,26 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/programs/intermediate" className="hover:text-[#F39C12] transition">
+                <Link
+                  href="/programs/intermediate"
+                  className="hover:text-[#F39C12] transition"
+                >
                   Programs
                 </Link>
               </li>
               <li>
-                <Link href="/admissions" className="hover:text-[#F39C12] transition">
+                <Link
+                  href="/admissions"
+                  className="hover:text-[#F39C12] transition"
+                >
                   Admissions
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#F39C12] transition">
+                <Link
+                  href="/contact"
+                  className="hover:text-[#F39C12] transition"
+                >
                   Contact
                 </Link>
               </li>
@@ -50,15 +59,47 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
-                <span>Bhalwal, Punjab, Pakistan</span>
+                <span>
+                  Gujjrat BYpass Road Near Pertroling Chowki BHalwal, Punjab,
+                  Pakistan
+                </span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone size={18} />
-                <span>+92-XXX-XXXXXXX</span>
-              </div>
+             <div className="flex flex-col  gap-3 text-white">
+
+      <a
+        href="https://wa.me/923216021006"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2  rounded-xl transition-all"
+      >
+        <Phone size={18} className="" />
+        <span>0321-6021006</span>
+      </a>
+
+      
+      <a
+        href="https://wa.me/923250123008"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 rounded-xl transition-all"
+      >
+        <Phone size={18} className="" />
+        <span>0325-0123008</span>
+      </a>
+
+      <a
+        href="https://wa.me/923202626913"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2   rounded-xl transition-all"
+      >
+        <Phone size={18} className="" />
+        <span>0320-2626913</span>
+      </a>
+    </div>
               <div className="flex items-center gap-2">
                 <Mail size={18} />
-                <span>info@ric.edu.pk</span>
+                <span></span>
               </div>
             </div>
           </div>
@@ -102,5 +143,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
