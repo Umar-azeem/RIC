@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -10,7 +11,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold mb-4">About RIC</h3>
+            <h3 className="text-xl font-bold mb-4">
+              <Image
+                src="/img/logo.png"
+                alt="Example image"
+                width={500}
+                height={300}
+              />
+            </h3>
             <p className="text-gray-200 text-sm">
               Riphah International College prepares students with transformative
               experience and to be well-rounded leaders.
@@ -64,42 +72,36 @@ export default function Footer() {
                   Pakistan
                 </span>
               </div>
-             <div className="flex flex-col  gap-3 text-white">
+              <div className="flex flex-col  gap-3 text-white">
+                <a
+                  href="https://wa.me/923216021006"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2  rounded-xl transition-all"
+                >
+                  <Phone size={18} className="" />
+                  <span>0321-6021006</span>
+                </a>
 
-      <a
-        href="https://wa.me/923216021006"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2  rounded-xl transition-all"
-      >
-        <Phone size={18} className="" />
-        <span>0321-6021006</span>
-      </a>
+                <a
+                  href="https://wa.me/923250123008"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 rounded-xl transition-all"
+                >
+                  <Phone size={18} className="" />
+                  <span>0325-0123008</span>
+                </a>
 
-      
-      <a
-        href="https://wa.me/923250123008"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 rounded-xl transition-all"
-      >
-        <Phone size={18} className="" />
-        <span>0325-0123008</span>
-      </a>
-
-      <a
-        href="https://wa.me/923202626913"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2   rounded-xl transition-all"
-      >
-        <Phone size={18} className="" />
-        <span>0320-2626913</span>
-      </a>
-    </div>
-              <div className="flex items-center gap-2">
-                <Mail size={18} />
-                <span></span>
+                <a
+                  href="https://wa.me/923202626913"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2   rounded-xl transition-all"
+                >
+                  <Phone size={18} className="" />
+                  <span>0320-2626913</span>
+                </a>
               </div>
             </div>
           </div>
@@ -108,15 +110,28 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-[#F39C12] transition">
+              <a
+                href="https://web.facebook.com/riphahbhalwal/?_rdc=1&_rdr#"
+                target="_blank"
+                className="hover:text-[#F39C12] transition "
+              >
                 <Facebook size={24} />
               </a>
-              <a href="#" className="hover:text-[#F39C12] transition">
+
+              <a
+                href="director.bhalwal@ric.edu.pk
+"                className="hover:text-[#F39C12] transition "
+
+              >
+                <Mail size={24} />
+              </a>
+
+              {/* <a href="#" className="hover:text-[#F39C12] transition">
                 <Twitter size={24} />
               </a>
               <a href="#" className="hover:text-[#F39C12] transition">
                 <Linkedin size={24} />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -126,7 +141,7 @@ export default function Footer() {
           <h3 className="text-xl font-bold mb-4">Our Location</h3>
           <div className="w-full h-64 rounded-lg overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.8567521625266!2d72.73916!3d32.77889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfc0b8b8b8b8b9%3A0x0!2sBhalwal!5e0!3m2!1sen!2s!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3373.217586995596!2d72.9248147!3d32.2791275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3921bda580480257%3A0x9db29a9c4cc7125c!2sRiphah%20International%20College%2C%20Bhalwal!5e0!3m2!1sen!2s!4v1761959801578!5m2!1sen!2s"
               width="100%"
               height="100%"
               style={{ border: 0 }}
