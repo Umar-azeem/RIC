@@ -1,3 +1,5 @@
+import OurCampuses from "@/components/ourCampuses";
+
 export default function Campuses() {
   return (
     <main className="min-h-screen">
@@ -14,52 +16,7 @@ export default function Campuses() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-[#2E5090] mb-12">RIC Campuses</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                name: "Riphah International College, Bhalwal",
-                address: "Bhalwal, Punjab, Pakistan",
-                image: "/campus-building-with-students.jpg",
-                programs: ["Intermediate", "ADP Programs"],
-              },
-              {
-                name: "Riphah International College, Shahkot",
-                address: "Shahkot, Punjab, Pakistan",
-                image: "/classic-college-building.png",
-                programs: ["Intermediate", "ADP Programs"],
-              },
-              {
-                name: "Riphah International College, Khanewal",
-                address: "Khanewal, Punjab, Pakistan",
-                image: "/modern-campus.jpg",
-                programs: ["Intermediate", "ADP Programs"],
-              },
-              {
-                name: "Riphah International College, Lahore",
-                address: "Lahore, Punjab, Pakistan",
-                image: "/educational-institution.jpg",
-                programs: ["Intermediate", "ADP Programs"],
-              },
-            ].map((campus, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-                <img src={campus.image || "/placeholder.svg"} alt={campus.name} className="w-full h-64 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#2E5090] mb-2">{campus.name}</h3>
-                  <p className="text-gray-600 mb-4">{campus.address}</p>
-                  <div>
-                    <h4 className="font-bold text-[#2E5090] mb-2">Programs Offered:</h4>
-                    <ul className="space-y-1">
-                      {campus.programs.map((program, i) => (
-                        <li key={i} className="text-gray-700 flex items-center gap-2">
-                          <span className="text-[#F39C12]">•</span> {program}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+         <OurCampuses/>
         </div>
       </section>
 
