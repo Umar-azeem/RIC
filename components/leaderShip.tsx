@@ -64,7 +64,7 @@ import Image from "next/image";
         <h2 className="text-2xl font-semibold text-center mb-8 text-blue-700">
           Senior Faculty
         </h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="flex justify-center items-center  gap-6 max-w-6xl mx-auto">
           {seniorTeachers.map((teacher, index) => (
             <div
               key={index}
