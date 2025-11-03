@@ -9,11 +9,9 @@ export default function Home() {
     <main className="min-h-screen">
    
         <HeroSlider />
-      
-
-      <NameList />
-      <OurValus />
-      <OurCampuses />
+         <NameList />
+         <OurValus />
+         <OurCampuses />
 
       {/* Blogs & Articles Section */}
       <section className="py-16 bg-gray-50">

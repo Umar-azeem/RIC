@@ -50,28 +50,7 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Leadership */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-[#2E5090] mb-4">Leadership</h2>
-          <div className="w-16 h-1 bg-[#F39C12] mx-auto mb-12"></div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              { name: "Chancellor", title: "Dr. Muhammad Ali" },
-              { name: "Vice Chancellor", title: "Prof. Dr. Fatima Khan" },
-              { name: "Principal", title: "Dr. Ahmed Hassan" },
-              { name: "Academic Director", title: "Prof. Dr. Saira Ahmed" },
-            ].map((leader, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold text-[#2E5090] mb-2">{leader.name}</h3>
-                <p className="text-gray-600">{leader.title}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+   
 
       {/* Academic Regulations */}
       <section className="py-16">
