@@ -1,8 +1,6 @@
-"use client"
-
-import type React from "react"
-
-import { useState } from "react"
+"use client";
+import type React from "react";
+import { useState } from "react";
 
 export default function ApplyOnline() {
   const [formData, setFormData] = useState({
@@ -23,50 +21,80 @@ export default function ApplyOnline() {
     parentName: "",
     parentPhone: "",
     parentEmail: "",
-  })
+  });
 
-  const [submitted, setSubmitted] = useState(false)
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        cnic: "",
-        dateOfBirth: "",
-        gender: "",
-        address: "",
-        city: "",
-        province: "",
-        previousSchool: "",
-        previousMarks: "",
-        program: "",
-        campus: "",
-        parentName: "",
-        parentPhone: "",
-        parentEmail: "",
-      })
-    }, 3000)
-  }
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 8000);
+  };
+
+  // Email send function
+  const sendEmail = () => {
+    const mailBody = `
+New Application Form:
+
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+CNIC: ${formData.cnic}
+DOB: ${formData.dateOfBirth}
+Gender: ${formData.gender}
+Address: ${formData.address}
+City: ${formData.city}
+Province: ${formData.province}
+Previous School: ${formData.previousSchool}
+Previous Marks: ${formData.previousMarks}
+Program: ${formData.program}
+Campus: ${formData.campus}
+Parent Name: ${formData.parentName}
+Parent Phone: ${formData.parentPhone}
+Parent Email: ${formData.parentEmail}
+`;
+    window.location.href = `mailto:director.bhalwal@ric.edu.pk?subject=New Application&body=${encodeURIComponent(
+      mailBody
+    )}`;
+  };
+
+  // WhatsApp send function
+  const sendWhatsApp = () => {
+    const message = `
+New Application Form:
+
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+CNIC: ${formData.cnic}
+Program: ${formData.program}
+Campus: ${formData.campus}
+Parent Name: ${formData.parentName}
+Parent Phone: ${formData.parentPhone}
+`;
+    window.open(
+      `https://wa.me/923216021006?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  };
 
   return (
     <main className="min-h-screen">
       {/* Header */}
-      <section className="bg-[#2E5090] text-white py-12">
+      <section className="bg-[#2E5090] text-white py-6 md:py-12">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-4xl font-bold mb-2">Apply Online</h1>
           <p className="text-lg">Start your journey with RIC</p>
@@ -78,12 +106,20 @@ export default function ApplyOnline() {
         <div className="max-w-4xl mx-auto px-4">
           {submitted && (
             <div className="mb-8 p-6 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-              <h3 className="font-bold text-lg mb-2">Application Submitted Successfully!</h3>
-              <p>Thank you for applying to RIC. We will review your application and contact you soon.</p>
+              <h3 className="font-bold text-lg mb-2">
+                Application Submitted Successfully!
+              </h3>
+              <p>
+                Thank you for applying to RIC. You can now send your form via
+                Email or WhatsApp below.
+              </p>
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg">
+          <form
+            onSubmit={handleSubmit}
+            className="bg-white p-8 rounded-lg shadow-lg"
+          >
             {/* Personal Information */}
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-[#2E5090] mb-6 pb-4 border-b-2 border-[#F39C12]">
@@ -92,7 +128,9 @@ export default function ApplyOnline() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">First Name *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    First Name *
+                  </label>
                   <input
                     type="text"
                     name="firstName"
@@ -104,7 +142,9 @@ export default function ApplyOnline() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">Last Name *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Last Name *
+                  </label>
                   <input
                     type="text"
                     name="lastName"
@@ -116,7 +156,9 @@ export default function ApplyOnline() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">Email *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Email *
+                  </label>
                   <input
                     type="email"
                     name="email"
@@ -128,7 +170,9 @@ export default function ApplyOnline() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">Phone Number *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Phone Number *
+                  </label>
                   <input
                     type="tel"
                     name="phone"
@@ -140,7 +184,9 @@ export default function ApplyOnline() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">CNIC *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    CNIC *
+                  </label>
                   <input
                     type="text"
                     name="cnic"
@@ -152,7 +198,9 @@ export default function ApplyOnline() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">Date of Birth *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Date of Birth *
+                  </label>
                   <input
                     type="date"
                     name="dateOfBirth"
@@ -163,7 +211,9 @@ export default function ApplyOnline() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">Gender *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Gender *
+                  </label>
                   <select
                     name="gender"
                     value={formData.gender}
@@ -188,7 +238,9 @@ export default function ApplyOnline() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="md:col-span-2">
-                  <label className="block text-gray-700 font-bold mb-2">Address *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Address *
+                  </label>
                   <textarea
                     name="address"
                     value={formData.address}
@@ -200,7 +252,9 @@ export default function ApplyOnline() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">City *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    City *
+                  </label>
                   <input
                     type="text"
                     name="city"
@@ -212,7 +266,9 @@ export default function ApplyOnline() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">Province *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Province *
+                  </label>
                   <input
                     type="text"
                     name="province"
@@ -234,7 +290,9 @@ export default function ApplyOnline() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">Previous School/College *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Previous School/College *
+                  </label>
                   <input
                     type="text"
                     name="previousSchool"
@@ -246,7 +304,9 @@ export default function ApplyOnline() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">Previous Marks/GPA *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Previous Marks/GPA *
+                  </label>
                   <input
                     type="text"
                     name="previousMarks"
@@ -258,7 +318,9 @@ export default function ApplyOnline() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">Program *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Program *
+                  </label>
                   <select
                     name="program"
                     value={formData.program}
@@ -271,13 +333,19 @@ export default function ApplyOnline() {
                     <option value="fsc-medical">FSc Pre-Medical</option>
                     <option value="fa-arts">FA (Arts)</option>
                     <option value="commerce">Commerce</option>
-                    <option value="adp-business">ADP Business Management</option>
-                    <option value="adp-accounting">ADP Accounting & Finance</option>
+                    <option value="adp-business">
+                      ADP Business Management
+                    </option>
+                    <option value="adp-accounting">
+                      ADP Accounting & Finance
+                    </option>
                     <option value="adp-computing">ADP Computing</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">Preferred Campus *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Preferred Campus *
+                  </label>
                   <select
                     name="campus"
                     value={formData.campus}
@@ -286,10 +354,10 @@ export default function ApplyOnline() {
                     className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#2E5090]"
                   >
                     <option value="">Select Campus</option>
-                    <option value="bhalwal">Bhalwal</option>
-                    <option value="shahkot">Shahkot</option>
-                    <option value="khanewal">Khanewal</option>
-                    <option value="lahore">Lahore</option>
+                    <option value="bhalwal">Bhera</option>
+                    <option value="shahkot">Kotmomin</option>
+                    <option value="khanewal">M.B din</option>
+                    <option value="lahore">Attock</option>
                   </select>
                 </div>
               </div>
@@ -303,7 +371,9 @@ export default function ApplyOnline() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">Parent/Guardian Name *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Parent/Guardian Name *
+                  </label>
                   <input
                     type="text"
                     name="parentName"
@@ -315,7 +385,9 @@ export default function ApplyOnline() {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-bold mb-2">Parent Phone Number *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Parent Phone Number *
+                  </label>
                   <input
                     type="tel"
                     name="parentPhone"
@@ -327,7 +399,9 @@ export default function ApplyOnline() {
                   />
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-gray-700 font-bold mb-2">Parent Email *</label>
+                  <label className="block text-gray-700 font-bold mb-2">
+                    Parent Email *
+                  </label>
                   <input
                     type="email"
                     name="parentEmail"
@@ -341,24 +415,42 @@ export default function ApplyOnline() {
               </div>
             </div>
 
-            {/* Submit Button */}
-            <div className="flex gap-4">
+            {/* Buttons */}
+            <div className="flex flex-col md:flex-row gap-4">
               <button
                 type="submit"
                 className="flex-1 bg-[#2E5090] text-white py-3 rounded font-bold hover:bg-[#1e3a5f] transition"
               >
                 Submit Application
               </button>
-              <button
+              {/* <button
                 type="reset"
                 className="flex-1 bg-gray-400 text-white py-3 rounded font-bold hover:bg-gray-500 transition"
               >
                 Clear Form
-              </button>
+              </button> */}
             </div>
           </form>
+
+          {submitted && (
+            <div className="flex flex-col md:flex-row gap-4 mt-8">
+              <button
+                onClick={sendEmail}
+                className="flex-1 bg-blue-600 text-white py-3 rounded font-bold hover:bg-blue-700 transition"
+              >
+                Send via Email
+              </button>
+
+              <button
+                onClick={sendWhatsApp}
+                className="flex-1 bg-green-600 text-white py-3 rounded font-bold hover:bg-green-700 transition"
+              >
+                Send via WhatsApp
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </main>
-  )
+  );
 }

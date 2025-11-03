@@ -1,38 +1,43 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
-import { ChevronDown, Search, Menu, X } from "lucide-react"
-import Image from "next/image"
+import Link from "next/link";
+import { useState } from "react";
+import { ChevronDown, Search, Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const toggleDropdown = (name: string) => {
-    setOpenDropdown(openDropdown === name ? null : name)
-  }
+    setOpenDropdown(openDropdown === name ? null : name);
+  };
 
   return (
-    <nav className="bg-[#2E5090] text-white sticky top-0 z-50 shadow-lg " >
+    <nav className="bg-[#2E5090] text-white sticky top-0 z-50 shadow-lg ">
       <div className="max-w-7xl mx-auto px-4 ">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
+        <button onClick={() => setIsOpen(!isOpen)}>
+
           <Link href="/" className="flex items-center gap-2 font-bold text-xl ">
             <div className="w-20 h-20 md:w-28 md:h-20 lg:w-36 lg:h-36 rounded-full flex items-center justify-center ">
-           <Image
-              src="/img/logo.png"  
-              alt="Example image"        
-              width={500}                
-              height={300}         
-    />
+              <Image
+                src="/img/logo.png"
+                alt="Example image"
+                width={500}
+                height={300}
+              />
             </div>
-       
           </Link>
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-1">
-            <Link href="/" className="px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
+            <Link
+              href="/"
+              className="px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+            >
               Home
             </Link>
 
@@ -42,10 +47,16 @@ export default function Navbar() {
                 About <ChevronDown size={16} />
               </button>
               <div className="absolute left-0 mt-0 w-48 bg-white text-gray-800 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-                <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  href="/about"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Our Values
                 </Link>
-                <Link href="/leadership" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  href="/leadership"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Leadership
                 </Link>
               </div>
@@ -57,10 +68,16 @@ export default function Navbar() {
                 Programs <ChevronDown size={16} />
               </button>
               <div className="absolute left-0 mt-0 w-48 bg-white text-gray-800 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-                <Link href="/programs/intermediate" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  href="/programs/intermediate"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Intermediate
                 </Link>
-                <Link href="/programs/adp" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  href="/programs/adp"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   ADP Programs
                 </Link>
               </div>
@@ -72,28 +89,46 @@ export default function Navbar() {
                 Admissions <ChevronDown size={16} />
               </button>
               <div className="absolute left-0 mt-0 w-48 bg-white text-gray-800 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-                <Link href="/admissions" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  href="/admissions"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Admission Process
                 </Link>
-                <Link href="/apply" className="block px-4 py-2 hover:bg-gray-100">
+                <Link
+                  href="/apply"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   Apply Online
                 </Link>
               </div>
             </div>
 
-            <Link href="/e-learning" className="px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
+            <Link
+              href="/e-learning"
+              className="px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+            >
               E-Learning
             </Link>
 
-            <Link href="/campuses" className="px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
+            <Link
+              href="/campuses"
+              className="px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+            >
               Our Campuses
             </Link>
 
-            <Link href="/apply" className="px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
+            <Link
+              href="/apply"
+              className="px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+            >
               Apply Online
             </Link>
 
-            <Link href="/contact" className="px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
+            <Link
+              href="/contact"
+              className="px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+            >
               Contact Us
             </Link>
           </div>
@@ -119,56 +154,115 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden pb-4 space-y-2">
-            <Link href="/" className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
+         <button onClick={() => setIsOpen(!isOpen)}>
+
+            <Link
+              href="/"
+              className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+            >
               Home
             </Link>
+            </button>
             <button
-              onClick={() => toggleDropdown("about")}
+              onClick={() => {
+                toggleDropdown("about");
+              }}
               className="w-full text-left px-3 py-2 rounded hover:bg-[#1e3a5f] transition flex items-center justify-between"
             >
-              About <ChevronDown size={16} className={openDropdown === "about" ? "rotate-180" : ""} />
+              About{" "}
+              <ChevronDown
+                size={16}
+                className={openDropdown === "about" ? "rotate-180" : ""}
+              />
             </button>
             {openDropdown === "about" && (
-              <div className="pl-4 space-y-2">
-                <Link href="/about" className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
-                  Our Values
-                </Link>
-                <Link href="/leadership" className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
-                  Leadership
-                </Link>
+              <div className="flex flex-col items-start pl-4 space-y-2">
+                <button onClick={() => setIsOpen(!isOpen)}>
+                  {" "}
+                  <Link
+                    href="/about"
+                    className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+                  >
+                    Our Values
+                  </Link>
+                </button>
+                <button onClick={() => setIsOpen(!isOpen)}>
+                  <Link
+                    href="/leadership"
+                    className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+                  >
+                    Leadership
+                  </Link>
+                </button>
               </div>
             )}
             <button
               onClick={() => toggleDropdown("programs")}
               className="w-full text-left px-3 py-2 rounded hover:bg-[#1e3a5f] transition flex items-center justify-between"
             >
-              Programs <ChevronDown size={16} className={openDropdown === "programs" ? "rotate-180" : ""} />
+              Programs{" "}
+              <ChevronDown
+                size={16}
+                className={openDropdown === "programs" ? "rotate-180" : ""}
+              />
             </button>
             {openDropdown === "programs" && (
-              <div className="pl-4 space-y-2">
-                <Link href="/programs/intermediate" className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
-                  Intermediate
-                </Link>
-                <Link href="/programs/adp" className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
-                  ADP Programs
-                </Link>
+              <div className="flex flex-col items-start pl-4 space-y-2">
+                <button onClick={() => setIsOpen(!isOpen)}>
+                  <Link
+                    href="/programs/intermediate"
+                    className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+                  >
+                    Intermediate
+                  </Link>
+                </button>
+                <button onClick={() => setIsOpen(!isOpen)}>
+                  <Link
+                    href="/programs/adp"
+                    className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+                  >
+                    ADP Programs
+                  </Link>
+                </button>
               </div>
             )}
-            <Link href="/e-learning" className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
-              E-Learning
-            </Link>
-            <Link href="/campuses" className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
-              Our Campuses
-            </Link>
-            <Link href="/apply" className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
-              Apply Online
-            </Link>
-            <Link href="/contact" className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition">
-              Contact Us
-            </Link>
+            <div className="flex flex-col items-start">
+            <button onClick={() => setIsOpen(!isOpen)}>
+              <Link
+                href="/e-learning"
+                className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+              >
+                E-Learning
+              </Link>
+            </button>
+            <button onClick={() => setIsOpen(!isOpen)}>
+              <Link
+                href="/campuses"
+                className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+              >
+                Our Campuses
+              </Link>
+            </button>
+            <button onClick={() => setIsOpen(!isOpen)}>
+              <Link
+                href="/apply"
+                className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+              >
+                Apply Online
+              </Link>
+            </button>
+            <button onClick={() => setIsOpen(!isOpen)}>
+              <Link
+                href="/contact"
+                className="block px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+              >
+                Contact Us
+              </Link>
+            </button>
+            </div>
           </div>
         )}
       </div>
     </nav>
-  )
+  );
 }

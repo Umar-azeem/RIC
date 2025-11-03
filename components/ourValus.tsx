@@ -153,23 +153,23 @@ const CAMPUS_IMAGES = [
     <section className="py-10 md:py-16 bg-[#2E5090] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Stats Section */}
-       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center mb-8 sm:mb-10 md:mb-12">
+       <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center mb-8 sm:mb-10 md:mb-12">
   {/* Campuses */}
   <div className="flex flex-col items-center justify-center p-3 sm:p-4 md:p-6 bg-white/10 rounded-lg hover:bg-white/20 transition-all duration-300">
-    <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#F39C12] mb-1 sm:mb-2">45+</div>
-    <p className="text-base sm:text-lg md:text-xl">Campuses</p>
+    <div className="text-lg sm:text-2xl md:text-5xl font-bold text-[#F39C12] mb-1 sm:mb-1">45+</div>
+    <p className="text-base sm:text-sm md:text-xl">Campuses</p>
   </div>
 
   {/* Teachers */}
   <div className="flex flex-col items-center justify-center p-3 sm:p-4 md:p-6 bg-white/10 rounded-lg hover:bg-white/20 transition-all duration-300">
-    <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#F39C12] mb-1 sm:mb-2">1,000+</div>
-    <p className="text-base sm:text-lg md:text-xl">Teachers</p>
+    <div className="text-lg sm:text-4xl md:text-5xl font-bold text-[#F39C12] mb-1 sm:mb-2">1,000+</div>
+    <p className="text-base sm:text-md md:text-xl">Teachers</p>
   </div>
 
   {/* Students */}
   <div className="flex flex-col items-center justify-center p-3 sm:p-4 md:p-6 bg-white/10 rounded-lg hover:bg-white/20 transition-all duration-300">
-    <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#F39C12] mb-1 sm:mb-2">20,000+</div>
-    <p className="text-base sm:text-lg md:text-xl">Students</p>
+    <div className="text-lg sm:text-4xl md:text-5xl font-bold text-[#F39C12] mb-1 sm:mb-2">20,000+</div>
+    <p className="text-base sm:text-md md:text-xl">Students</p>
   </div>
 </div>
 

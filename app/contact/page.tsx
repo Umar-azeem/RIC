@@ -13,18 +13,19 @@ export default function Contact() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            
             {[
               {
                 title: "Address",
-                content: "Bhalwal, Punjab, Pakistan",
+                content: " Gujjrat BYpass Road Near Pertroling Chowki Bhalwal, Punjab, Pakistan",
               },
               {
                 title: "Phone",
-                content: "+92-XXX-XXXXXXX",
+                content: "+92321-6021006 // +92325-0123008 0320-26269",
               },
               {
                 title: "Email",
-                content: "info@ric.edu.pk",
+                content: "director.bhalwal@ric.edu.pk",
               },
             ].map((info, index) => (
               <div key={index} className="bg-white p-8 rounded-lg shadow-lg text-center border-t-4 border-[#F39C12]">
