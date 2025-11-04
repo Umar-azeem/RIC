@@ -20,12 +20,14 @@ import Image from "next/image";
  ];
 
   const staffMembers = [
-    { name: "Qandeel Jafri", title: "Teacher ", image: "/image/qan.jpeg" },
-    { name: "Aqib", title: "Teacher", image: "/image/aqi.png" },
-    { name: "Maria Mumtaz", title: "Admin", image: "/image/mari.jpeg" },
-    { name: "maryam", title: "IT & Programing", image: "/image/fe2.jpg" },
-    { name: "Hoor Noor", title: "Computer System", image: "/image/fe3.jpg" },
+    { name: "Sir Hamid", title: "Intermediate coordinator", image: "/image/him.png" },
+    { name: "Sir Aqib ", title: "ADP COORDINATOR", image: "/image/aqi.png" },
+    { name: "Rr Mam Maria Mumtaz", title: "Admin", image: "/image/mari.jpeg" },
+    { name: "Rr Mam maryam", title: "IT & Programing", image: "/image/fe2.jpg" },
+    { name: "Rr Mam Samiya", title: "HR MANAGER", image: "/image/fe3.jpg" },
   ];
+ 
+ 
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 py-12 px-4">
@@ -112,3 +114,4 @@ import Image from "next/image";
   );
 }
 export default LeaderShip
+

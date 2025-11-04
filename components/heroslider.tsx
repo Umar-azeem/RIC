@@ -12,11 +12,11 @@ import {
 import Image from "next/image";
 
 const slides = [
-  {
-    image: "/image/hr.png",
-    title: "Welcome to RIC",
-    subtitle: "Preparing students with transformative experience",
-  },
+  // {
+  //   image: "/image/.png",
+  //   title: "Welcome to RIC",
+  //   subtitle: "Preparing students with transformative experience",
+  // },
   {
     image: "/image/hr2.png",
     title: "Excellence in Education",
