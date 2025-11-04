@@ -151,8 +151,10 @@ const CAMPUS_IMAGES = [
 
   return (
     <section className="py-10 md:py-16 bg-[#2E5090] text-white">
+     
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Stats Section */}
+         <h2 className="text-3xl flex justify-center text-center items-center font-bold text-white mb-3 ">Riphah International College Overview</h2>
+          <div className="w-16 h-1 bg-[#F39C12] mx-auto mb-6"></div>
        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center mb-8 sm:mb-10 md:mb-12">
   {/* Campuses */}
   <div className="flex flex-col items-center justify-center p-3 sm:p-4 md:p-6 bg-white/10 rounded-lg hover:bg-white/20 transition-all duration-300">

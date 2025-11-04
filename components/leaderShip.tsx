@@ -19,12 +19,13 @@ import Image from "next/image";
     { name: "Naveed Abbas Khan", title: "Principal", image: "/image/r12.jpeg" },
  ];
 
+
+
   const staffMembers = [
     { name: "Sir Hamid", title: "Intermediate coordinator", image: "/image/him.png" },
-    { name: "Sir Aqib ", title: "ADP COORDINATOR", image: "/image/aqi.png" },
-    { name: "Rr Mam Maria Mumtaz", title: "Admin", image: "/image/mari.jpeg" },
-    { name: "Rr Mam maryam", title: "IT & Programing", image: "/image/fe2.jpg" },
-    { name: "Rr Mam Samiya", title: "HR MANAGER", image: "/image/fe3.jpg" },
+    { name: "Sir Aqib ", title: "REGISTRAR", image: "/image/aqi.png" },
+    { name: "Rr Mam Maria Mumtaz", title: "Admission Officer", image: "/image/mari.jpeg" },
+    { name: "Mam Samiya", title: "HR MANAGER", image: "/image/fe3.jpg" },
   ];
  
  

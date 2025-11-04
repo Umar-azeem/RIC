@@ -42,7 +42,9 @@ function NameList() {
 
   return (
     <section className="py-12 bg-white text-center">
-      <h2 className="text-3xl font-bold text-blue-800 mb-10">Our Values</h2>
+      <h2 className="text-3xl font-bold text-blue-800 mb-2">Our Values</h2>
+          <div className="w-16 h-1 bg-[#F39C12] mx-auto mb-4"></div>
+
 
       <div className="flex flex-wrap justify-center gap-6">
         {values.map((item, index) => (
