@@ -14,30 +14,21 @@ import Image from "next/image";
       image: "/image/14.jpeg",
     },
   ];
-
   const seniorTeachers = [
     { name: "Naveed Abbas Khan", title: "Principal", image: "/image/r12.jpeg" },
  ];
-
-
-
   const staffMembers = [
     { name: "Sir Hamid", title: "Intermediate coordinator", image: "/image/him.png" },
     { name: "Sir Aqib ", title: "REGISTRAR", image: "/image/aqi.png" },
-    { name: "Rr Mam Maria Mumtaz", title: "Admission Officer", image: "/image/mari.jpeg" },
+    { name: "Mam Maria Mumtaz", title: "Admission Officer", image: "/image/mari.jpeg" },
     { name: "Mam Samiya", title: "HR MANAGER", image: "/image/fe3.jpg" },
   ];
- 
- 
-
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 py-12 px-4">
-      {/* ===== Page Title ===== */}
       <h1 className="text-4xl font-bold text-center mb-12 text-blue-800">
         Leadership & Management
       </h1>
 
-      {/* ===== Directors Section ===== */}
       <section className="mb-16">
         <h2 className="text-3xl font-semibold text-center mb-8 text-blue-700">
           Directors & Principals
@@ -61,8 +52,6 @@ import Image from "next/image";
           ))}
         </div>
       </section>
-
-      {/* ===== Senior Teachers Section ===== */}
       <section className="mb-16">
         <h2 className="text-2xl font-semibold text-center mb-8 text-blue-700">
           Senior Faculty
@@ -86,8 +75,6 @@ import Image from "next/image";
           ))}
         </div>
       </section>
-
-      {/* ===== All Staff Section ===== */}
       <section>
         <h2 className="text-2xl font-semibold text-center mb-8 text-blue-700">
           Our Dedicated Staff
