@@ -118,6 +118,18 @@ export default function Navbar() {
               Our Campuses
             </Link>
 
+
+
+             <Link
+              href="/Careers"
+              className="px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
+            >
+              Careers
+              
+            </Link>
+
+
+
             <Link
               href="/apply"
               className="px-3 py-2 rounded hover:bg-[#1e3a5f] transition"
@@ -131,6 +143,7 @@ export default function Navbar() {
             >
               Contact Us
             </Link>
+            
           </div>
 
           {/* Search Bar */}
