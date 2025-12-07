@@ -15,12 +15,12 @@ export default function Careers() {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   // SEND FORM DATA TO WHATSAPP + EMAIL BACKEND
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
 
     const whatsappNumber = "03202626913";
