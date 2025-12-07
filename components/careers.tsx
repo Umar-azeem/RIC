@@ -92,7 +92,7 @@ export default function Careers() {
           ))}
         </div>
 
-        <h2 className="text-md md:text-xl  font-semibold mt-8 mb-3">Apply as a Teacher</h2>
+        <h2 className="text-md  md:text-xl  font-semibold mt-8 mb-3">Apply as a Teacher</h2>
         <p className="text-gray-700 mb-4">Your application will be sent to WhatsApp + Email.</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
